@@ -1,6 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpModule, Http } from '@angular/http';
+import { HttpModule, Http, JsonpModule } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 
@@ -20,11 +20,13 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { StocksPage } from '../pages/stock/stocks';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
+import { Stocks } from '../providers/stocks';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -76,7 +78,8 @@ let pages = [
   SignupPage,
   TabsPage,
   TutorialPage,
-  WelcomePage
+  WelcomePage,
+  StocksPage
 ];
 
 export function declarations() {
@@ -96,6 +99,7 @@ export function providers() {
     GoogleMaps,
     SplashScreen,
     StatusBar,
+    Stocks,
 
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
@@ -108,6 +112,7 @@ export function providers() {
   imports: [
     BrowserModule,
     HttpModule,
+    JsonpModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

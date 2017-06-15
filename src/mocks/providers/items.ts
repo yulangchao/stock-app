@@ -17,12 +17,12 @@ export class Items {
   constructor(public http: Http) {
     let items = [
       {
-        "name": "Burt Bear",
+        "name": "300228",
         "profilePic": "assets/img/speakers/bear.jpg",
         "about": "Burt is a Bear."
       },
       {
-        "name": "Charlie Cheetah",
+        "name": "002690",
         "profilePic": "assets/img/speakers/cheetah.jpg",
         "about": "Charlie is a Cheetah."
       },
